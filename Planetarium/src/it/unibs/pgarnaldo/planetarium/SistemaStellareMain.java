@@ -16,9 +16,6 @@ public class SistemaStellareMain {
 		//esegue il programma fino alla pressione di 0 = EXIT
 		do {
 	         Menu.displayMenu();
-	         int collisioni = sistema_stellare.getCollisioni();
-	         if(collisioni > 0)
-	         	System.out.println(String.format(COLLISIONE, collisioni));
 	         scelta = Menu.selectChoice();
 	         sistema_stellare.cosaFare(scelta);
 

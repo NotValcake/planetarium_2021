@@ -30,19 +30,22 @@ public class Pianeta extends CorpoCeleste {
 			return false;
 		}
 		
-		while ( this.getMassa() <= l.getMassa()) {
+		if ( this.getMassa() <= l.getMassa()) {
 			System.out.println("Una luna non puo avere massa superiore al proprio pianeta, inserisci un valore minore di "
 							+ this.getMassa() + ": ");
-			l.setMassa(InputDati.leggiInteroPositivo("Massa: "));			
+			//l.setMassa(InputDati.leggiInteroPositivo("Massa: "));
+			return false;
 		}
 		
 
-		while(l.getPosX() == this.getPosX() && l.getPosY() == this.getPosY()) {
+		if (l.getPosX() == this.getPosX() && l.getPosY() == this.getPosY()) {
 			System.out.println("La posizione inserita coincide con quella del pianeta, inserire una posizione valida.");
-			l.setPos_x(InputDati.leggiIntero("Inserire posizione x: "));
-			l.setPos_y(InputDati.leggiIntero("Inserire posizione y: "));
+			/*l.setPos_x(InputDati.leggiIntero("Inserire posizione x: "));
+			l.setPos_y(InputDati.leggiIntero("Inserire posizione y: "));*/
+			return  false;
 		}
 		this.lune.add(l);
+
 		return true;
 	}
 	
